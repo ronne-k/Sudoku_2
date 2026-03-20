@@ -1,0 +1,21 @@
+
+.scores-table {
+    border-collapse: collapse;
+    margin-top: 16px;
+}
+
+.scores-table th,
+.scores-table td {
+    border: 1px solid #adc178;
+    padding: 10px 20px;
+    text-align: left;
+}
+
+.scores-table th {
+    background-color: #414833;
+    color: #f0ead2;
+}
+
+.scores-table td {
+    color: #41521f;
+}

@@ -51,9 +51,9 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 12px 24px;
+    padding: 15px 24px;
     background-color: #a68a64;
-    position: fixed;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
@@ -61,14 +61,15 @@ h1 {
 }
 
 .navbar-title {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: bold;
     color: #adc178;
 }
 
-.navbar-links {
+.navbar-links a {
     display: flex;
     gap: 10px;
+    text-decoration: none;
 }
 
 .navbar-links a {
@@ -84,6 +85,7 @@ h1 {
 }
 
 .navbar-links a.active {
+    font-weight: bold;
     background-color: #adc178;
 }
 
@@ -101,16 +103,28 @@ input:focus {
     outline: 2px solid #adc178;
 }
 
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* For Mobile View*/
 @media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        gap: 8px;
+    .menu-toggle {
+        display: block;
     }
 
-    .navbar-links {
-        flex-wrap: wrap;
-        justify-content: center;
+    .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
     }
+
 
     .content {
         padding-top: 180px;

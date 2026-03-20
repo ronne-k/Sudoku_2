@@ -1,21 +1,50 @@
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
 
 export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  function toggleMenu() {
+    setMenuOpen(!menuOpen);
+  }
+
+  function closeMenu() {
+    setMenuOpen(false);
+  }
+
   return (
     <nav className="navbar">
       <div className="navbar-title">Math But Annoying</div>
 
-      <div className="navbar-links">
-        <NavLink to="/" end>
+      <button className="menu-toggle" onClick={toggleMenu} aria-label="Toggle navigation menu">
+        ☰
+      </button>
+
+      <div className={`navbar-links ${menuOpen ? "open" : ""}`}>
+        <NavLink to="/" end onClick={closeMenu}>
           Home
         </NavLink>
-        <NavLink to="/games">Selection</NavLink>
-        <NavLink to="/games/normal">Hard</NavLink>
-        <NavLink to="/games/easy">Easy</NavLink>
-        <NavLink to="/rules">Rules</NavLink>
-        <NavLink to="/scores">Scoreboard</NavLink>
-        <NavLink to="/login">Login</NavLink>
-        <NavLink to="/register">Register</NavLink>
+        <NavLink to="/games" onClick={closeMenu}>
+          Selection
+        </NavLink>
+        <NavLink to="/games/normal" onClick={closeMenu}>
+          Hard
+        </NavLink>
+        <NavLink to="/games/easy" onClick={closeMenu}>
+          Easy
+        </NavLink>
+        <NavLink to="/rules" onClick={closeMenu}>
+          Rules
+        </NavLink>
+        <NavLink to="/scores" onClick={closeMenu}>
+          Scoreboard
+        </NavLink>
+        <NavLink to="/login" onClick={closeMenu}>
+          Login
+        </NavLink>
+        <NavLink to="/register" onClick={closeMenu}>
+          Register
+        </NavLink>
       </div>
     </nav>
   );

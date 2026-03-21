@@ -1,6 +1,4 @@
-import "./ScoresPageStyle.css";
-
-export default function ScoresPage() {
+export default function HighScore() {
   return (
     <div className="content">
       <h1>Are You Better Than Everyone Else?</h1>

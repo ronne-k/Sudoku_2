@@ -14,19 +14,16 @@ export default function App() {
   return (
     <>
       <Navbar />
-
-      <div className="content">
-        <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/games" element={<GamePage />} />
-          <Route path="/games/easy" element={<EasyGame />} />
-          <Route path="/games/normal" element={<NormalGame />} />
-          <Route path="/rules" element={<Rules />} />
-          <Route path="/scores" element={<HighScore />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/games" element={<GamePage />} />
+        <Route path="/games/easy" element={<EasyGame />} />
+        <Route path="/games/normal" element={<NormalGame />} />
+        <Route path="/rules" element={<Rules />} />
+        <Route path="/scores" element={<HighScore />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+      </Routes>
     </>
   );
 }

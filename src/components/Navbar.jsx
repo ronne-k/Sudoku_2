@@ -16,7 +16,11 @@ export default function Navbar() {
     <nav className="navbar">
       <div className="navbar-title">Math But Annoying</div>
 
-      <button className="menu-toggle" onClick={toggleMenu} aria-label="Toggle navigation menu">
+      <button
+        className="menu-toggle"
+        onClick={toggleMenu}
+        aria-label="Toggle navigation menu"
+      >
         ☰
       </button>
 

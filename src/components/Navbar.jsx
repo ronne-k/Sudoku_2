@@ -19,7 +19,7 @@ export default function Navbar() {
         <div className="navbar-title">Math But Annoying</div> 
 
           <button
-            className="menu-toggle button"
+            className="menu-toggle"
             onClick={toggleMenu}
             aria-label="Toggle navigation menu"
           >

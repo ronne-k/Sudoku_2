@@ -11,19 +11,26 @@ export default function Navbar() {
   function closeMenu() {
     setMenuOpen(false);
   }
-
+  const windowWidth = window.innerWidth;
   return (
     <nav className="navbar">
-      <div className="navbar-title">Math But Annoying</div>
+      {windowWidth < 600 ? (
+        <div> 
+        <div className="navbar-title">Math But Annoying</div> 
 
-      <button
-        className="menu-toggle"
-        onClick={toggleMenu}
-        aria-label="Toggle navigation menu"
-      >
-        ☰
-      </button>
-
+          <button
+            className="menu-toggle button"
+            onClick={toggleMenu}
+            aria-label="Toggle navigation menu"
+          >
+            
+          </button>
+        </div>
+      ) : (
+        <div className="navbar-title">Math But Annoying</div> 
+      )}
+      
+      {windowWidth > 600 ? (
       <div className={`navbar-links ${menuOpen ? "open" : ""}`}>
         <NavLink to="/" end onClick={closeMenu}>
           Home
@@ -50,6 +57,9 @@ export default function Navbar() {
           Register
         </NavLink>
       </div>
+      ) : ( 
+        <div></div>
+      )}
     </nav>
   );
 }

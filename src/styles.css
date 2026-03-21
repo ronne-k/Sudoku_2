@@ -89,6 +89,8 @@ h1 {
     background-color: #adc178;
 }
 
+
+
 .content {
     padding-top: 80px;
     padding-left: 24px;
@@ -109,6 +111,9 @@ input:focus {
     border: none;
     font-size: 1.8rem;
     cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 24px;
 }
 
 /* For Mobile View*/

@@ -29,18 +29,19 @@ export default function SudokuProvider(props) {
   // --- Board Generation ---
 
   function isValid(board, row, col, num) {
-    const boxSize = size === 9 ? 3 : 2;
+    const boxRows = size === 9 ? 3 : 2;
+    const boxCols = size === 9 ? 3 : 3;
 
     for (let i = 0; i < size; i++) {
       if (board[row][i] === num) return false;
       if (board[i][col] === num) return false;
     }
 
-    const startRow = Math.floor(row / boxSize) * boxSize;
-    const startCol = Math.floor(col / boxSize) * boxSize;
+    const startRow = Math.floor(row / boxRows) * boxRows;
+    const startCol = Math.floor(col / boxCols) * boxCols;
 
-    for (let r = startRow; r < startRow + boxSize; r++) {
-      for (let c = startCol; c < startCol + boxSize; c++) {
+    for (let r = startRow; r < startRow + boxRows; r++) {
+      for (let c = startCol; c < startCol + boxCols; c++) {
         if (board[r][c] === num) return false;
       }
     }
@@ -84,7 +85,6 @@ export default function SudokuProvider(props) {
 
     let toRemove = size * size - filledCount;
     let attempts = 0;
-
     while (toRemove > 0 && attempts < 200) {
       const r = Math.floor(Math.random() * size);
       const c = Math.floor(Math.random() * size);

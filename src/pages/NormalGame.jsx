@@ -1,5 +1,5 @@
-import SudokuProvider from "../SudokuProvider";
-import SudokuBoard from "../SudokuBoard";
+import SudokuProvider from "../components/SudokuProvider";
+import SudokuBoard from "../components/SudokuBoard";
 
 export default function NormalGame() {
   return (

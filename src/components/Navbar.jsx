@@ -5,33 +5,27 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   function toggleMenu() {
-    setMenuOpen(!menuOpen);
+    setMenuOpen((prev) => !prev);
   }
 
   function closeMenu() {
     setMenuOpen(false);
   }
-  const windowWidth = window.innerWidth;
+
   return (
     <nav className="navbar">
-      {windowWidth < 600 ? (
-        <div> 
-        <div className="navbar-title">Math But Annoying</div> 
+      <div className="navbar-title">Math But Annoying</div>
 
-          <button
-            className="menu-toggle"
-            onClick={toggleMenu}
-            aria-label="Toggle navigation menu"
-          >
-            
-          </button>
-        </div>
-      ) : (
-        <div className="navbar-title">Math But Annoying</div> 
-      )}
-      
-      {windowWidth > 600 ? (
-      <div className={`navbar-links ${menuOpen ? "open" : ""}`}>
+      <button
+        className="menu-toggle"
+        type="button"
+        onClick={toggleMenu}
+        aria-label="Open menu"
+      >
+        ☰
+      </button>
+
+      <div className={menuOpen ? "navbar-links mobile-open" : "navbar-links"}>
         <NavLink to="/" end onClick={closeMenu}>
           Home
         </NavLink>
@@ -57,9 +51,6 @@ export default function Navbar() {
           Register
         </NavLink>
       </div>
-      ) : ( 
-        <div></div>
-      )}
     </nav>
   );
 }

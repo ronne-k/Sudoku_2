@@ -9,7 +9,7 @@ export default function HomePage() {
 
       <div>
         <img
-          src="/assets/homepage_art.png"
+          src={`${import.meta.env.BASE_URL}assets/homepage_art.png`}
           alt="sudoku pic"
           className="homepage-img"
         />

@@ -24,7 +24,7 @@ export default function RulesPage() {
       <div>
         <p className="space-bottom-paragraph"></p>
         <img
-          src="/assets/images/rules_art.png"
+          src={`${import.meta.env.BASE_URL}assets/rules_art.png`}
           alt="rules pic"
           className="rules-img"
         />

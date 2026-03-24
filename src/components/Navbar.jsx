@@ -33,7 +33,7 @@ export default function Navbar() {
           Selection
         </NavLink>
         <NavLink to="/games/normal" onClick={closeMenu}>
-          Hard
+          Normal
         </NavLink>
         <NavLink to="/games/easy" onClick={closeMenu}>
           Easy
